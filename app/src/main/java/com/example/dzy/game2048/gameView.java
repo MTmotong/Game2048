@@ -48,7 +48,21 @@ public class gameView extends GridLayout {
                         offsetY = event.getY() - startY;
 
                         //防止用户向右下角方向滑动，不知该算什么方向，所以用绝对值来算
-                        
+                        if (Math.abs(offsetX) > Math.abs(offsetY)) {
+                            //水平
+                            if (offsetX < -5) {
+                                System.out.println("left");
+                            } else if (offsetX > 5) {
+                                System.out.println("right");
+                            }
+                        } else {
+                            //垂直
+                            if (offsetY < -5) {
+                                System.out.println("down");
+                            } else if (offsetY > 5) {
+                                System.out.println("up");
+                            }
+                        }
 
                         break;
                     default:
